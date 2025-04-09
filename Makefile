@@ -1,6 +1,8 @@
 
 SERIES ?= noble
 DESTDIR ?= install
+KERNEL_PPA ?= revysr/noble-eic770x
+KERNEL_SOURCE_NAME ?= eic7700x
 
 all:
 	mkdir -p $(DESTDIR)
@@ -8,7 +10,7 @@ all:
 	make install/dtb
 	make install/grub
 	make meta
-	make install/u-boot
+#	make install/u-boot
 
 meta:
 	mkdir -p $(DESTDIR)/meta
@@ -23,10 +25,10 @@ install/cidata:
 install/dtb:
 	rm -rf build
 	mkdir build
-	cd build && pull-lp-debs -a riscv64 linux-riscv '' $(SERIES)
+	cd build && pull-ppa-debs --ppa $(KERNEL_PPA) -a riscv64 linux-$(KERNEL_SOURCE_NAME) '' $(SERIES)
 	cd build && dpkg -x linux-modules*.deb linux-modules/
 	mkdir -p $(DESTDIR)/dtb
-	cp -r ./build/linux-modules/lib/firmware/*-generic/device-tree/* \
+	cp -r ./build/linux-modules/usr/lib/firmware/*-$(KERNEL_SOURCE_NAME)/device-tree/* \
 	$(DESTDIR)/dtb
 	rm -rf build
 
@@ -38,7 +40,7 @@ install/grub:
 	cd build && dpkg -x grub-efi-riscv64-unsigned*.deb grub/
 	mkdir -p $(DESTDIR)/grub
 	cp ./build/grub/usr/lib/grub/riscv64-efi/monolithic/grubriscv64.efi $(DESTDIR)/grub/
-	cp grub.cfg $(DESTDIR)/grub/
+	cp grub/grub.cfg $(DESTDIR)/grub/
 	rm -rf build
 
 install/u-boot:

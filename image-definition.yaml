@@ -5,11 +5,11 @@ revision: 1
 architecture: riscv64
 series: noble
 class: preinstalled
-kernel: linux-image-generic
+kernel: linux-image-eic7700x
 gadget:
-  url: "https://github.com/canonical/risc-v-gadget.git"
+  url: "https://github.com/revysr/risc-v-gadget.git"
   type: "git"
-  branch: "main"
+  branch: "p550"
 rootfs:
   archive: ubuntu
   sources-list-deb822: true
@@ -18,7 +18,7 @@ rootfs:
     - restricted
     - universe
     - multiverse
-  mirror: "http://ports.ubuntu.com/ubuntu-ports/"
+  mirror: "https://ports.ubuntu.com/ubuntu-ports/"
   pocket: updates
   seed:
     urls:
@@ -33,6 +33,10 @@ customization:
   extra-packages:
     - name: "flash-kernel"
     - name: "grub-efi-riscv64"
+    - name: "u-boot-tools"
+  extra-ppas:
+    - name: "revysr/noble-eic770x"
+      fingerprint: "42E434D1F5F8349BA31C4E081C20DCAE59B0C6ED"
   extra-snaps:
     - name: snapd
   fstab:
@@ -47,6 +51,26 @@ customization:
       mount-options: "defaults"
       dump: false
       fsck-order: 1
+  manual:
+    make-dirs:
+      - path: /etc/default/grub.d
+        permissions: 0755
+      - path: /boot/efi
+        permissions: 0755
+      - path: /etc/flash-kernel
+        permissions: 0755
+    copy-file:
+      - destination: /etc/default/grub.d/zz_p550.cfg
+        source: grub/zz_p550.cfg
+      - destination: /etc/flash-kernel/db
+        source: flash-kernel/db
+      - destination: /etc/flash-kernel/machine
+        source: flash-kernel/machine
+      - destination: /tmp/customize.sh
+        source: customize.sh
+    execute:
+      - path: /tmp/customize.sh
+
 artifacts:
   img:
     - name: ubuntu-24.04-preinstalled-server-riscv64.img
