@@ -33,6 +33,11 @@ install/dtb:
 	rm -rf build
 
 install/grub:
+	mkdir -p $(DESTDIR)/grub
+	cp grub/grub.cfg $(DESTDIR)/grub/
+	cp grub/grubriscv64.efi $(DESTDIR)/grub/
+
+install/grub-old:
 	rm -rf build
 	mkdir build
 	# Monolithic images are not yet backported to Ubuntu 22.04.
