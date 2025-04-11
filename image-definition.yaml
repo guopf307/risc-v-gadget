@@ -72,6 +72,8 @@ customization:
     - name: "firefox"
   extra-snaps:
     - name: snapd
+  deb-packages:
+    - deb-packages/rtsp-simple-server_0.0.1_riscv64.deb
   fstab:
     - label: "writable"
       mountpoint: "/"
