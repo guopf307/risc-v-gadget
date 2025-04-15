@@ -7,7 +7,7 @@ series: noble
 class: preinstalled
 kernel: linux-eic7700
 gadget:
-  url: "https://github.com/RevySR/risc-v-gadget"
+  url: "https://github.com/guopf307/risc-v-gadget"
   type: "git"
   branch: "ubuntu-p550"
 rootfs:
