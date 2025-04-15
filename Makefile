@@ -1,6 +1,8 @@
 
 SERIES ?= noble
 DESTDIR ?= install
+KERNEL_PPA ?= eswincomputing/noble-eic7700
+KERNEL_SOURCE_NAME ?= eic7700
 
 all:
 	mkdir -p $(DESTDIR)
@@ -18,11 +20,11 @@ install/cidata:
 install/dtb:
 	rm -rf build
 	mkdir build
-	cd build && wget https://launchpad.net/~sifive-sandbox/+archive/ubuntu/linux/+files/linux-image-6.6.21-35-g29ac17434e52-eswin_6.6.21-35-g29ac17434e52-0ubuntu0~ppa13_all.deb
-	cd build && dpkg -x linux-image*.deb linux-modules/
+	cd build && pull-ppa-debs --ppa $(KERNEL_PPA) -a riscv64 linux-$(KERNEL_SOURCE_NAME) '' $(SERIES)
+	cd build && dpkg -x linux-modules*.deb linux-modules/
 	mkdir -p $(DESTDIR)/dtb
-	cp -r ./build/linux-modules/usr/lib/firmware/*-eswin/device-tree/* \
-	$(DESTDIR)/dtb
+	cp -r ./build/linux-modules/usr/lib/firmware/*-$(KERNEL_SOURCE_NAME)/device-tree/* \
+        $(DESTDIR)/dtb
 	rm -rf build
 
 install/grub:
