@@ -38,9 +38,6 @@ customization:
     -
       name: sifive-sandbox/release
       fingerprint: 07A4AB084F5B6251B9EB460718EF46BDC6A17D42
-    -
-      name: sifive-sandbox/linux
-      fingerprint: 07A4AB084F5B6251B9EB460718EF46BDC6A17D42
   cloud-init:
     user-data: |
       #cloud-config
