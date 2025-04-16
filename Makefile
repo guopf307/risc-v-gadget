@@ -1,8 +1,6 @@
 
 SERIES ?= noble
 DESTDIR ?= install
-KERNEL_PPA ?= eswincomputing/noble-eic7700
-KERNEL_SOURCE_NAME ?= eic7700
 
 all:
 	mkdir -p $(DESTDIR)
@@ -20,11 +18,10 @@ install/cidata:
 install/dtb:
 	rm -rf build
 	mkdir build
-	cd build && pull-ppa-debs --ppa $(KERNEL_PPA) -a riscv64 linux-$(KERNEL_SOURCE_NAME) '' $(SERIES)
+	cd build && wget https://launchpad.net/~eswincomputing/+archive/ubuntu/noble-eic7700/+files/linux-modules-6.6.18-2-eic7700_6.6.18-2_riscv64.deb
 	cd build && dpkg -x linux-modules*.deb linux-modules/
 	mkdir -p $(DESTDIR)/dtb
-	cp -r ./build/linux-modules/usr/lib/firmware/*-$(KERNEL_SOURCE_NAME)/device-tree/* \
-        $(DESTDIR)/dtb
+	cp -r ./build/linux-modules/usr/lib/firmware/*-eic7700/device-tree/* $(DESTDIR)/dtb
 	rm -rf build
 
 install/grub:
