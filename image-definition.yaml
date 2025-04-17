@@ -32,15 +32,11 @@ rootfs:
       - standard
 customization:
   extra-ppas:
+      name: sifive-sandbox/linux
+      fingerprint: 07A4AB084F5B6251B9EB460718EF46BDC6A17D42
     -
       name: eswincomputing/noble-eic7700
       fingerprint: 5F1BB31B87A6D34CB7A509512672395EA9419D21
-    -
-      name: sifive-sandbox/release
-      fingerprint: 07A4AB084F5B6251B9EB460718EF46BDC6A17D42
-    -
-      name: sifive-sandbox/linux
-      fingerprint: 07A4AB084F5B6251B9EB460718EF46BDC6A17D42
   cloud-init:
     user-data: |
       #cloud-config
@@ -72,7 +68,6 @@ customization:
     - name: "mesa-va-drivers"
     - name: "mesa-vdpau-drivers"
     - name: "mesa-vulkan-drivers"
-    - name: "firefox"
   extra-snaps:
     - name: snapd
   deb-packages:
