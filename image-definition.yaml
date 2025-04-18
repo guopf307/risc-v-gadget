@@ -5,7 +5,7 @@ revision: 1
 architecture: riscv64
 series: noble
 class: preinstalled
-kernel: linux-eic7700
+kernel: linux-eic770x
 gadget:
   url: "https://github.com/guopf307/risc-v-gadget"
   type: "git"
@@ -72,7 +72,7 @@ customization:
   extra-snaps:
     - name: snapd
   deb-packages:
-    - deb-packages/rtsp-simple-server_0.0.1_riscv64.deb
+    - path: ./deb-packages/rtsp-simple-server_0.0.1_riscv64.deb
   fstab:
     - label: "writable"
       mountpoint: "/"
