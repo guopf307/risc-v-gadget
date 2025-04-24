@@ -5,11 +5,11 @@ revision: 1
 architecture: riscv64
 series: noble
 class: preinstalled
-kernel: linux-eic770x
+kernel: linux-eic7702
 gadget:
   url: "https://github.com/guopf307/risc-v-gadget"
   type: "git"
-  branch: "ubuntu-p550"
+  branch: "ubuntu-eic7702-evb"
 rootfs:
   archive: ubuntu
   sources-list-deb822: true
@@ -42,7 +42,7 @@ customization:
     user-data: |
       #cloud-config
       chpasswd:
-        expire: true
+        expire: false
         users:
           - name: ubuntu
             password: ubuntu
@@ -96,8 +96,8 @@ customization:
       - path: /etc/apt/preferences.d
         permissions: 0755
     copy-file:
-      - destination: /etc/default/grub.d/zz_p550.cfg
-        source: grub/zz_p550.cfg
+      - destination: /etc/default/grub.d/zz_eic7702_evb.cfg
+        source: grub/zz_eic7702_evb.cfg
       - destination: /etc/flash-kernel/db
         source: flash-kernel/db
       - destination: /etc/flash-kernel/machine
