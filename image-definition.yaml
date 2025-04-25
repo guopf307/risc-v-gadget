@@ -106,6 +106,24 @@ customization:
         source: customize.sh
       - destination: /etc/apt/preferences.d
         source: pin_eswincomputing_ppa
+      - destination: /etc/udev/rules.d/20-memory.rules
+        source: rules/20-memory.rules
+      - destination: /etc/udev/rules.d/21-cipher.rules
+        source: rules/21-cipher.rules
+      - destination: /etc/udev/rules.d/30-bmc.rules
+        source: rules/30-bmc.rules
+      - destination: /etc/udev/rules.d/86-ai.rules
+        source: rules/86-ai.rules
+      - destination: /etc/udev/rules.d/98-media-mmz-drv-perm-udev.rules
+        source: rules/98-media-mmz-drv-perm-udev.rules
+      - destination: /etc/udev/rules.d/99-media-video-drv-perm-udev.rules
+        source: rules/99-media-video-drv-perm-udev.rules
+      - destination: /lib/firmware/clm_bcm43752a2_ag.blob
+        source: firmware/clm_bcm43752a2_ag.blob
+      - destination: /lib/firmware/fw_bcm43752a2_ag.bin
+        source: firmware/fw_bcm43752a2_ag.bin
+      - destination: /lib/firmware/nvram_ap12275_m2.txt
+        source: firmware/nvram_ap12275_m2.txt
     execute:
       - path: /tmp/customize.sh
 artifacts:
