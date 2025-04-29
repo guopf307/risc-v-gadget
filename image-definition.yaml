@@ -98,32 +98,71 @@ customization:
         permissions: 0755
     copy-file:
       - destination: /etc/default/grub.d/zz_evb2.cfg
+        mode: 0644
+        owner: root
+        group: root
         source: grub/zz_evb2.cfg
       - destination: /etc/flash-kernel/db
+        mode: 0644
+        owner: root
+        group: root
         source: flash-kernel/db
       - destination: /etc/flash-kernel/machine
+        mode: 0644
+        owner: root
+        group: root
         source: flash-kernel/machine
       - destination: /tmp/customize.sh
+        mode: 0644
+        owner: root
+        group: root
         source: customize.sh
       - destination: /etc/apt/preferences.d
         source: pin_eswincomputing_ppa
       - destination: /etc/udev/rules.d/20-memory.rules
+        mode: 0644
+        owner: root
+        group: root
         source: rules/20-memory.rules
       - destination: /etc/udev/rules.d/21-cipher.rules
+        mode: 0644
+        owner: root
+        group: root
         source: rules/21-cipher.rules
       - destination: /etc/udev/rules.d/30-bmc.rules
+        mode: 0644
+        owner: root
+        group: root
         source: rules/30-bmc.rules
       - destination: /etc/udev/rules.d/86-ai.rules
+        mode: 0644
+        owner: root
+        group: root
         source: rules/86-ai.rules
       - destination: /etc/udev/rules.d/98-media-mmz-drv-perm-udev.rules
+        mode: 0644
+        owner: root
+        group: root
         source: rules/98-media-mmz-drv-perm-udev.rules
       - destination: /etc/udev/rules.d/99-media-video-drv-perm-udev.rules
+        mode: 0644
+        owner: root
+        group: root
         source: rules/99-media-video-drv-perm-udev.rules
       - destination: /lib/firmware/clm_bcm43752a2_ag.blob
+        mode: 0644
+        owner: root
+        group: root
         source: firmware/clm_bcm43752a2_ag.blob
       - destination: /lib/firmware/fw_bcm43752a2_ag.bin
+        mode: 0644
+        owner: root
+        group: root
         source: firmware/fw_bcm43752a2_ag.bin
       - destination: /lib/firmware/nvram_ap12275_m2.txt
+        mode: 0644
+        owner: root
+        group: root
         source: firmware/nvram_ap12275_m2.txt
     execute:
       - path: /tmp/customize.sh

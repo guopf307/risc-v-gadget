@@ -6,6 +6,6 @@
 #Machine: Globalscale Technologies Dreamplug
 #Boot-Device: /dev/sdb1
 
-Machine: eswin evb2
+Machine: EIC7700FG EVB LP5 A2
 Kernel-Flavors: any
 DTB-Id: eswin/eic7700-evb-a2.dtb
