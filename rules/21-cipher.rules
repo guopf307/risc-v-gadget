@@ -1,1 +1,1 @@
-KERNEL=="eswin_ipc_misc_dev[0-1]", MODE="0660", GROUP="eswin", OWNER="eswin"
+KERNEL=="ubuntu_ipc_misc_dev[0-1]", MODE="0666", GROUP="ubuntu", OWNER="ubuntu"
