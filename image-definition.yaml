@@ -70,7 +70,7 @@ customization:
     - name: "mesa-va-drivers"
     - name: "mesa-vdpau-drivers"
     - name: "mesa-vulkan-drivers"
-    - name: "essdk"
+    - name: "es-sdk*"
     - name: "ffmpeg"
     - name: "mpv"
   extra-snaps:
