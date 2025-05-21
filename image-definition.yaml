@@ -73,8 +73,6 @@ customization:
     - name: "es-fancontrol"
     - name: "es-hae"
     - name: "es-mpp"
-    - name: "es-product-test"
-    - name: "es-product-ubuntu-test"
     - name: "es-sdk-ak"
     - name: "es-sdk-audio-codec"
     - name: "es-sdk-audio"
