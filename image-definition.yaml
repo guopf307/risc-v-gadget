@@ -5,11 +5,11 @@ revision: 1
 architecture: riscv64
 series: noble
 class: preinstalled
-kernel: linux-eic770x
+kernel: linux-eic7700x
 gadget:
   url: "https://github.com/guopf307/risc-v-gadget"
   type: "git"
-  branch: "ubuntu-p550"
+  branch: "ubuntu-sbc"
 rootfs:
   archive: ubuntu
   sources-list-deb822: true
@@ -38,6 +38,9 @@ customization:
     -
       name: eswincomputing/noble-eic7700
       fingerprint: 5F1BB31B87A6D34CB7A509512672395EA9419D21
+    -
+      name: guopengfei307/noble-eic7700x
+      fingerprint: 2FCFFC5D9C7662464A56BC9D5B50E350FCC87AD9
   cloud-init:
     user-data: |
       #cloud-config
