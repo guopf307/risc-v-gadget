@@ -125,6 +125,12 @@ customization:
         source: firmware/fw_bcm43752a2_ag.bin
       - destination: /lib/firmware/nvram_ap12275_m2.txt
         source: firmware/nvram_ap12275_m2.txt
+      - destination: /lib/firmware/BCM4345C5_003.006.006.1084.1156-AP6256.hcd
+        source: firmware/BCM4345C5_003.006.006.1084.1156-AP6256.hcd
+      - destination: /lib/firmware/fw_bcm43456c5_ag.bin
+        source: firmware/fw_bcm43456c5_ag.bin
+      - destination: /lib/firmware/nvram_ap6256.txt
+        source: firmware/nvram_ap6256.txt
     execute:
       - path: /tmp/customize.sh
 artifacts:
