@@ -73,7 +73,7 @@ customization:
     - name: "mesa-va-drivers"
     - name: "mesa-vdpau-drivers"
     - name: "mesa-vulkan-drivers"
-    - name: "es-product-test"
+    - name: "es-product-ubuntu-test"
   extra-snaps:
     - name: snapd
   deb-packages:
