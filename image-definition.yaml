@@ -5,7 +5,7 @@ revision: 1
 architecture: riscv64
 series: noble
 class: preinstalled
-kernel: linux-eic7700x
+kernel: linux-eic7700
 gadget:
   url: "https://github.com/guopf307/risc-v-gadget"
   type: "git"
@@ -38,9 +38,6 @@ customization:
     -
       name: eswincomputing/noble-eic7700
       fingerprint: 5F1BB31B87A6D34CB7A509512672395EA9419D21
-    -
-      name: guopengfei307/noble-eic7700x
-      fingerprint: 2FCFFC5D9C7662464A56BC9D5B50E350FCC87AD9
   cloud-init:
     user-data: |
       #cloud-config
@@ -76,8 +73,6 @@ customization:
     - name: "es-product-ubuntu-test"
   extra-snaps:
     - name: snapd
-  deb-packages:
-    - path: ./deb-packages/rtsp-simple-server_0.0.1_riscv64.deb
   fstab:
     - label: "writable"
       mountpoint: "/"
