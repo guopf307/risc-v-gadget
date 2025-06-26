@@ -33,8 +33,8 @@ rootfs:
 customization:
   extra-ppas:
     -
-      name: sifive-sandbox/linux
-      fingerprint: 07A4AB084F5B6251B9EB460718EF46BDC6A17D42
+      name: eswincomputing/noble-platform
+      fingerprint: 5F1BB31B87A6D34CB7A509512672395EA9419D21
     -
       name: eswincomputing/noble-eic7700
       fingerprint: 5F1BB31B87A6D34CB7A509512672395EA9419D21
