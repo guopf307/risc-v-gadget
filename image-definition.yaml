@@ -70,6 +70,7 @@ customization:
     - name: "mesa-va-drivers"
     - name: "mesa-vdpau-drivers"
     - name: "mesa-vulkan-drivers"
+    - name: "es-product-test"
   extra-snaps:
     - name: snapd
   fstab:
@@ -133,6 +134,6 @@ customization:
       - path: /tmp/customize.sh
 artifacts:
   img:
-    - name: sbc-ubuntu-24.04-preinstalled-server-riscv64.img
+    - name: factory-sbc-ubuntu-24.04-preinstalled-server-riscv64.img
   manifest:
-    name: sbc-ubuntu-24.04-preinstalled-server-riscv64.manifest
+    name: factory-sbc-ubuntu-24.04-preinstalled-server-riscv64.manifest
