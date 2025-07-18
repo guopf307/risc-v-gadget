@@ -74,7 +74,7 @@ regrev=0
 mcsbw202gpo=0x98886422
 mcsbw402gpo=0x98777755
 
-maxp5ga0=75,75,77,76
+maxp5ga0=75,75,75,76
 
 #5GHz_20MHz Offset
 mcsbw205glpo=0xba753311

@@ -39,6 +39,6 @@ jobs:
       - name: Upload Image
         uses: actions/upload-artifact@v4
         with:
-          name: sbc-eic7700-image-2025.05.02
+          name: sbc-eic7700-image-2025.06
           path: workdir/*.zst
           retention-days: 30
