@@ -129,6 +129,8 @@ customization:
         source: firmware/fw_bcm43456c5_ag.bin
       - destination: /lib/firmware/nvram_ap6256.txt
         source: firmware/nvram_ap6256.txt
+      - destination: /etc/init.d/wifi-disable.sh
+        source: firmware/wifi-disable.sh
     execute:
       - path: /tmp/customize.sh
 artifacts:

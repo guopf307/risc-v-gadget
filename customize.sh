@@ -7,3 +7,4 @@ sed -i 's|#[[:space:]]*WaylandEnable[[:space:]]*=.*|WaylandEnable=false|' /etc/g
 
 chown root:root /etc/udev/rules.d/*
 chmod 0644 /etc/udev/rules.d/*
+update-rc.d wifi-disable.sh defaults 90
