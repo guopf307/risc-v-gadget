@@ -9,7 +9,7 @@ kernel: linux-eic7702
 gadget:
   url: "https://github.com/guopf307/risc-v-gadget"
   type: "git"
-  branch: "ubuntu-eic7702-evb"
+  branch: "ubuntu-d560"
 rootfs:
   archive: ubuntu
   sources-list-deb822: true

@@ -8,4 +8,4 @@
 
 Machine: ESWIN eic7702 evb
 Kernel-Flavors: any
-DTB-Id: eswin/eic7702-evb-a1.dtb
+DTB-Id: eswin/eic7702-d560.dtb
