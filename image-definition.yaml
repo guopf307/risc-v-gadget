@@ -45,7 +45,7 @@ customization:
         expire: false
         users:
           - name: ubuntu
-            password: Eswin888888
+            password: $6$yqh5NZV2tbL3PR8c$UAgyFqBu74mNNkIgwubA2cEA/.ucL0jVAh7oo4FnCBKJclhmZbxE2AcNJ87v3wbyZX.5ewXKBqDJoiQ0LX4Fl0
             type: text
       runcmd:
         - sed -i 's|#[[:space:]]*WaylandEnable[[:space:]]*=.*|WaylandEnable=false|' /etc/gdm3/custom.conf
