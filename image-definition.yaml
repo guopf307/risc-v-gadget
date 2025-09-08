@@ -42,14 +42,13 @@ customization:
     user-data: |
       #cloud-config
       chpasswd:
-        expire: false
+        expire: true
         users:
           - name: ubuntu
-            password: $6$yqh5NZV2tbL3PR8c$UAgyFqBu74mNNkIgwubA2cEA/.ucL0jVAh7oo4FnCBKJclhmZbxE2AcNJ87v3wbyZX.5ewXKBqDJoiQ0LX4Fl0
-            type: hash
+            password: ubuntu
+            type: text
       runcmd:
         - sed -i 's|#[[:space:]]*WaylandEnable[[:space:]]*=.*|WaylandEnable=false|' /etc/gdm3/custom.conf
-        - chage -I -1 -m 0 -M 99999 -E -1 ubuntu
   extra-packages:
     - name: "flash-kernel"
     - name: "grub-efi-riscv64"
