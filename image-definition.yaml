@@ -42,10 +42,10 @@ customization:
     user-data: |
       #cloud-config
       chpasswd:
-        expire: false
+        expire: true
         users:
           - name: ubuntu
-            password: Eswin888888
+            password: ubuntu
             type: text
       runcmd:
         - sed -i 's|#[[:space:]]*WaylandEnable[[:space:]]*=.*|WaylandEnable=false|' /etc/gdm3/custom.conf
