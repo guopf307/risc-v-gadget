@@ -42,7 +42,7 @@ customization:
     user-data: |
       #cloud-config
       chpasswd:
-        expire: false
+        expire: true
         users:
           - name: ubuntu
             password: ubuntu
